@@ -1,11 +1,7 @@
 fileFormatVersion: 2
-guid: cfc15e74263d44043811fbe6103334f1
+guid: c46999f1e80e9ac49b8cb7ae1105d30f
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: cow_spritesheet_0
-    21300002: cow_spritesheet_1
-    21300004: cow_spritesheet_2
-    21300006: cow_spritesheet_3
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -44,10 +40,10 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 7
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -86,91 +82,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: cow_spritesheet_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 61
-        width: 68
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d2e0626985d7cd45b9eb9eedbf3d6b0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cow_spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 61
-        width: 68
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b857ca8d417fe344f919ebbff2832bd0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cow_spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 1
-        width: 68
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49fa1cd601b4558448fec55f1469f6de
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cow_spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 1
-        width: 68
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58e13b309d26cda4f988680a70bb9783
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d0e20cb5c22605541acb91e59ab5a81b
+    spriteID: 391d598ca74d09349843a1f3ef863992
     vertices: []
     indices: 
     edges: []

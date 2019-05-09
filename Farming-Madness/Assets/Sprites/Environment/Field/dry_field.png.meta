@@ -1,11 +1,16 @@
 fileFormatVersion: 2
-guid: cfc15e74263d44043811fbe6103334f1
+guid: b4b2b1d8973921c42ae7bcd737b5cc04
 TextureImporter:
   fileIDToRecycleName:
-    21300000: cow_spritesheet_0
-    21300002: cow_spritesheet_1
-    21300004: cow_spritesheet_2
-    21300006: cow_spritesheet_3
+    21300000: dry_field_0
+    21300002: dry_field_1
+    21300004: dry_field_2
+    21300006: dry_field_3
+    21300008: dry_field_4
+    21300010: dry_field_5
+    21300012: dry_field_6
+    21300014: dry_field_7
+    21300016: dry_field_8
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -44,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -88,13 +93,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cow_spritesheet_0
+      name: dry_field_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 61
-        width: 68
-        height: 52
+        x: 0
+        y: 60
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -102,19 +107,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d2e0626985d7cd45b9eb9eedbf3d6b0
+      spriteID: 9c1032ce09c83bb45a5b53b736e4cd48
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_spritesheet_1
+      name: dry_field_1
       rect:
         serializedVersion: 2
-        x: 90
-        y: 61
-        width: 68
-        height: 50
+        x: 30
+        y: 60
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,19 +127,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b857ca8d417fe344f919ebbff2832bd0
+      spriteID: 7824c5b9c8d3e2649b1a859dbe93a39b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_spritesheet_2
+      name: dry_field_2
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 68
-        height: 52
+        x: 60
+        y: 60
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,19 +147,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49fa1cd601b4558448fec55f1469f6de
+      spriteID: fa76f7ab0cf1fe6469610fc2e6998eca
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_spritesheet_3
+      name: dry_field_3
       rect:
         serializedVersion: 2
-        x: 90
-        y: 1
-        width: 68
-        height: 50
+        x: 0
+        y: 30
+        width: 30
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,7 +167,107 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58e13b309d26cda4f988680a70bb9783
+      spriteID: e4c4cfff296c99f44854c6c716d90655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dry_field_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 30
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350f6590517ab8e4c82bc734ddbf0301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dry_field_5
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 30
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8108e2615a3c804cbd2f4ed625a4816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dry_field_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5271e949b9c4edf43a4ee4986834da38
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dry_field_7
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3839369e4b0639345a34fc55dcbb38cf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dry_field_8
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16c76d6969043641a4e17ef8088923b
       vertices: []
       indices: 
       edges: []
@@ -170,7 +275,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d0e20cb5c22605541acb91e59ab5a81b
+    spriteID: 6c86e6fb9de02cb4fb3d6c95dfaf56c1
     vertices: []
     indices: 
     edges: []

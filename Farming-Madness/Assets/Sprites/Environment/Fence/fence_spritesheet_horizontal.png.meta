@@ -1,11 +1,13 @@
 fileFormatVersion: 2
-guid: cfc15e74263d44043811fbe6103334f1
+guid: 6bce230cd5e6b9d49b244d7d8a1ca160
 TextureImporter:
   fileIDToRecycleName:
-    21300000: cow_spritesheet_0
-    21300002: cow_spritesheet_1
-    21300004: cow_spritesheet_2
-    21300006: cow_spritesheet_3
+    21300000: fence_spritesheet_horizontal_0
+    21300002: fence_spritesheet_horizontal_1
+    21300004: fence_spritesheet_horizontal_2
+    21300006: fence_spritesheet_horizontal_3
+    21300008: fence_spritesheet_horizontal_4
+    21300010: fence_spritesheet_horizontal_5
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -88,81 +90,121 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cow_spritesheet_0
+      name: fence_spritesheet_horizontal_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 61
-        width: 68
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 60
+        width: 30
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d2e0626985d7cd45b9eb9eedbf3d6b0
+      spriteID: e92704e80d57ffc4084e71126045c646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_spritesheet_1
+      name: fence_spritesheet_horizontal_1
       rect:
         serializedVersion: 2
-        x: 90
-        y: 61
-        width: 68
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 30
+        y: 60
+        width: 30
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b857ca8d417fe344f919ebbff2832bd0
+      spriteID: 38d768b5bf1cc094bbd5ed9c3e1ccbdd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_spritesheet_2
+      name: fence_spritesheet_horizontal_2
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 68
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 60
+        y: 60
+        width: 30
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49fa1cd601b4558448fec55f1469f6de
+      spriteID: dd63ad00561a08d45aaff462741d9c80
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cow_spritesheet_3
+      name: fence_spritesheet_horizontal_3
       rect:
         serializedVersion: 2
-        x: 90
-        y: 1
-        width: 68
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 30
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58e13b309d26cda4f988680a70bb9783
+      spriteID: 6b8d1f70817ec9942b221be96836ba6d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_spritesheet_horizontal_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 30
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10efa00ca798c04db5c2bf78de78bf8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fence_spritesheet_horizontal_5
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 30
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bace525a563be19488bee3eb9b44a31f
       vertices: []
       indices: 
       edges: []
@@ -170,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d0e20cb5c22605541acb91e59ab5a81b
+    spriteID: 3916438b6faa8994397a9a69311eb818
     vertices: []
     indices: 
     edges: []
