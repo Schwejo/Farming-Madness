@@ -18,5 +18,5 @@ public class CropAsset : ScriptableObject
 public enum CropType 
 {
     /* List of all Crops */
-    Carrot, Potato, Wheat, Corn
+    Carrot, Potato, Wheat, Corn, Lettuce, Melon, Pepper, Tomato, Strawberry
 }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e247f496af7144a9be099e41d033f5, type: 3}
+  m_Name: StrawberryAsset
+  m_EditorClassIdentifier: 
+  cropType: 8
+  spriteStage0: {fileID: 21300000, guid: 5f79fa21e61ada742a6217f2b49c7258, type: 3}
+  spriteStage1: {fileID: 21300000, guid: 1837a14f3ab2de34ca92aa37899e024d, type: 3}
+  spriteStage2: {fileID: 21300000, guid: 98cc0a18b34cc22419c5823a0a882e22, type: 3}
+  spriteStage3: {fileID: 21300000, guid: 7e068215391da4144962b802df10aaf2, type: 3}
+  spriteStage4: {fileID: 21300000, guid: ca47ed1dbe12a3047a778d436104c7c4, type: 3}
+  spriteStage5: {fileID: 21300000, guid: b20eee31aae512b4b9d46717ca410eaa, type: 3}

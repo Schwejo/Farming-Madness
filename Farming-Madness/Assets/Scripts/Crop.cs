@@ -10,10 +10,9 @@ public class Crop
 
     public CropState cropState;
 
-    private float growLevel = 0;
+    public Field field;
 
-    /* Event getting called when cropState changes. */
-    public static Action OnStateChanged;
+    private float growLevel = 0;
 
 
     /* Constructor */
@@ -51,10 +50,10 @@ public class Crop
         if (cropState != state)
         {
             cropState = state;
-
-            //call event
-            if (OnStateChanged != null)
-                OnStateChanged();
+            if (field != null)
+            {
+                field.UpdateSprite();
+            }
         }
         
     }
@@ -93,6 +92,16 @@ public class Crop
             return false;
         else
             return true;
+    }
+
+    public void SetField(Field f)
+    {
+        field = f;
+    }
+
+    public void UnsetField()
+    {
+        field = null;
     }
 }
 

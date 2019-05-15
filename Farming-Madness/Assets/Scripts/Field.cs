@@ -22,26 +22,16 @@ public class Field : MonoBehaviour
         mainSpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void OnEnable()
-    {
-        Crop.OnStateChanged += UpdateSprite;
-    }
-
-    public void OnDisable()
-    {
-        Crop.OnStateChanged -= UpdateSprite;
-    }
-
     public void Interact(Crop c, bool hasCan, PlayerInteraction player)
     {
         if (c == null && hasCan && !isWet)
         {
             Water();
         }
-        else if (c != null && !hasCrop)
+        else if (c != null && !hasCrop && c.cropState == CropState.Stage0)
         {
             crop = c;
-            PlantSeed(crop);
+            PlantSeed();
             player.UnsetCrop();
         }
         else if (c == null && !hasCan && crop.hasCropAsset() && crop.cropState == CropState.Stage4)
@@ -62,16 +52,18 @@ public class Field : MonoBehaviour
         isWet = false;
     }
 
-    private void PlantSeed(Crop c)
+    private void PlantSeed()
     {
-        c.NextState();
-        cropOverlay.sprite = c.GetSprite();
+        crop.NextState();
+        crop.SetField(this);
+        cropOverlay.sprite = crop.GetSprite();
         hasCrop = true;
     }
 
     private void Harvest(PlayerInteraction p)
     {
         crop.NextState();
+        crop.UnsetField();
         p.SetCrop(crop);
         crop = null;
         cropOverlay.sprite = null;
@@ -79,7 +71,7 @@ public class Field : MonoBehaviour
         Dry();
     }
 
-    private void UpdateSprite()
+    public void UpdateSprite()
     {
         cropOverlay.sprite = crop.GetSprite();
     }

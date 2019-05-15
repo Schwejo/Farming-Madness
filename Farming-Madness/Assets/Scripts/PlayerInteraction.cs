@@ -52,7 +52,11 @@ public class PlayerInteraction : MonoBehaviour
                         }
                         break;
                     case "Table":
-                        //TODO
+                        Table table = target.GetComponent<Table>();
+                        if (table != null)
+                        {
+                            table.Interact(crop, hasCan, this);
+                        }
                         break;
                     case "Trash":
                         Trash trash = target.GetComponent<Trash>();

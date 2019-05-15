@@ -8,6 +8,7 @@ TagManager:
   - Can
   - Field
   - Trash
+  - Table
   layers:
   - Default
   - TransparentFX
