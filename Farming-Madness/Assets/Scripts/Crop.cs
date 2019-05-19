@@ -22,7 +22,7 @@ public class Crop
         cropState = state;
     }
 
-    /* Grows a crop by amount (=Time.deltaTime), returns true when cropState got changed. */
+    /* Grows a crop by amount (=Time.deltaTime) */
     public void Grow(float amount)
     {
         growLevel += amount / 10f;
@@ -45,6 +45,7 @@ public class Crop
         cropState = cropState + 1;
     }
 
+    /* Changes CropState if it has changed. If changed, field sprite gets updated. */
     public void SetState(CropState state)
     {
         if (cropState != state)

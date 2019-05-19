@@ -65,6 +65,13 @@ public class PlayerInteraction : MonoBehaviour
                             trash.Interact(crop, hasCan, this);
                         }
                         break;
+                    case "Tree":
+                        Trees tree = target.GetComponent<Trees>();
+                        if (tree != null)
+                        {
+                            tree.Interact(crop, hasCan, this);
+                        }
+                        break;
                 }
             }
             else if (hasCan)

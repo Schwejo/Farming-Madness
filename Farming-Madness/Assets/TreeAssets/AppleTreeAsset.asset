@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c6acdb1bdc0f74391d9d9d3f5742e8, type: 3}
+  m_Name: AppleTreeAsset
+  m_EditorClassIdentifier: 
+  growingTimePerStage: 3
+  stage0: {fileID: 21300000, guid: 7562d6c8960ac084498347ee44d5aaf0, type: 3}
+  stage1: {fileID: 21300000, guid: 8dfbab88de880584dab5e24288c1ac3c, type: 3}
+  stage2: {fileID: 21300000, guid: e5d80d06c62f4664a800d15f344c8204, type: 3}
+  stage3: {fileID: 21300000, guid: 30780c9a996446f4fadad80fa127ca3e, type: 3}
+  product: {fileID: 21300000, guid: 9317dd5f9f5112d48b41ae8d5024b811, type: 3}

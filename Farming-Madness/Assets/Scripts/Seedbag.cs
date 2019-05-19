@@ -5,7 +5,6 @@ using UnityEngine;
 public class Seedbag : MonoBehaviour
 {
     public Crop crop;
-    //public Sprite seedbagSprite;
 
     private void Start()
     {

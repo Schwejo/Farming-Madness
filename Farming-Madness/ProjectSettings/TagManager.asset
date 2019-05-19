@@ -9,6 +9,7 @@ TagManager:
   - Field
   - Trash
   - Table
+  - Tree
   layers:
   - Default
   - TransparentFX
