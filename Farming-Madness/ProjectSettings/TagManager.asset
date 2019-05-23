@@ -10,6 +10,7 @@ TagManager:
   - Trash
   - Table
   - Tree
+  - ProductionB
   layers:
   - Default
   - TransparentFX

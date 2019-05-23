@@ -15,8 +15,8 @@ public class CropAsset : ScriptableObject
     public Sprite spriteStage5; //Product
 }
 
+/* List of all Crops */
 public enum CropType 
 {
-    /* List of all Crops */
-    Carrot, Potato, Wheat, Corn, Lettuce, Melon, Pepper, Tomato, Strawberry
+    Carrot, Potato, Wheat, Corn, Lettuce, Melon, Pepper, Tomato, Strawberry, Milk, Honey, Apple, Egg
 }

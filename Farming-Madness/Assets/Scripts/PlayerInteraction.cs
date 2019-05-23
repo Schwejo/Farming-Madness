@@ -14,6 +14,8 @@ public class PlayerInteraction : MonoBehaviour
     private GameObject can;
     private bool hasCan = false;
 
+    private Product product;
+
     private BasicMovement basicMovement;
 
 
@@ -72,6 +74,13 @@ public class PlayerInteraction : MonoBehaviour
                             tree.Interact(crop, hasCan, this);
                         }
                         break;
+                    case "ProductionB":
+                        ProductionBuilding building = target.GetComponent<ProductionBuilding>();
+                        if (building != null)
+                        {
+                            building.Interact(crop, product, hasCan, this);
+                        }
+                        break;  
                 }
             }
             else if (hasCan)
