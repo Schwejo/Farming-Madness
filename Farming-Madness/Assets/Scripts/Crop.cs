@@ -7,7 +7,6 @@ using UnityEngine;
 public class Crop
 {
     public CropAsset cropAsset;
-
     public CropState cropState;
 
     public Field field;
@@ -15,7 +14,6 @@ public class Crop
     private float growLevel = 0;
 
 
-    /* Constructor */
     public Crop (CropAsset asset, CropState state)
     {
         cropAsset = asset;

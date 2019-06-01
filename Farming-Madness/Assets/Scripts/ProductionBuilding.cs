@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ProductionBuilding : MonoBehaviour
 {
+    [Header("Recipes")]
     public RecipeAsset[] recipes;
     private RecipeAsset activeRecipe;
     private bool recipeIsActive = false;
 
-    private List<Crop> inputCrops;
     private List<Product> inputProducts;
     
-    /* UI Overlay */
+    [Header("UI")]
     public GameObject recipeSelection;
     public SpriteRenderer productOverlay;
 
@@ -20,7 +20,6 @@ public class ProductionBuilding : MonoBehaviour
     {
         recipeSelection.SetActive(false);
 
-        inputCrops = new List<Crop>();
         inputProducts = new List<Product>();
     }
 
@@ -34,6 +33,11 @@ public class ProductionBuilding : MonoBehaviour
 
     private void SearchPossibleRecipes()
     {
-        
+        //sucht Rezepte je nach erstem Input
+    }
+
+    private void SelectRecipe()
+    {
+        //wähle Rezept aus possible Recipes aus
     }
 }

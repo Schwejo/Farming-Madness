@@ -6,11 +6,10 @@ using UnityEngine;
 public class ProductAsset : ScriptableObject
 {
     public Sprite sprite;
-    public ProductType type;
 }
 
-public enum ProductType 
+/*public enum ProductType 
 {
     Bread, Pizza, Applepie, StrawberryCake, Flour, Croissant, ScrambledEgg, Jelly, Salad, Lemonade, Sandwich, Fruitsalad,
     BakedPotato, Bruscetta, Pencake, Burger, Butter, Cheese, Yoghurt, Milkshake
-}
+}*/

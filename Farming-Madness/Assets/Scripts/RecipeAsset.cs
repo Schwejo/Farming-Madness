@@ -8,8 +8,7 @@ public class RecipeAsset : ScriptableObject
     public int recipeTier;
     public float cookingTime;
 
-    public Crop[] inputCrop;
-    public Product[] inputProduct;
+    public Product[] inputProducts;
 
-    public ProductAsset outputAsset;
+    public Product outputProduct;
 }
