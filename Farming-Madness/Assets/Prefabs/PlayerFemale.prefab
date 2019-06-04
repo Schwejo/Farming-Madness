@@ -53,6 +53,7 @@ MonoBehaviour:
   speedMultiplier: 5
   horizontalAxis: F_Horizontal
   verticalAxis: F_Vertical
+  movementEnabled: 1
 --- !u!114 &2995984416882732879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactKey: 111
+  keyLeft: 106
+  keyRight: 108
   iconBox: {fileID: 2995984417387129147}
 --- !u!210 &2995984416882732874
 SortingGroup:

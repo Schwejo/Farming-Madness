@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    [Header("Keys")]
     public KeyCode interactKey;
+    public KeyCode keyLeft;
+    public KeyCode keyRight;
+    
+    [Header("UI")]
     public IconBox iconBox;
 
     private GameObject target;
@@ -78,12 +83,19 @@ public class PlayerInteraction : MonoBehaviour
                         ProductionBuilding building = target.GetComponent<ProductionBuilding>();
                         if (building != null)
                         {
-                            building.Interact(crop, product, hasCan, this);
+                            if (crop != null)
+                            {
+                                product = crop.MakeProductFromCrop();
+                            }
+                            if (product != null)
+                            {
+                                building.Interact(product, this);
+                            }  
                         }
                         break;  
                 }
             }
-            else if (hasCan)
+            else if (hasCan) //for placing the can
             {
                 can.GetComponent<Can>().Interact(crop, hasCan, this);
             } 
@@ -141,5 +153,10 @@ public class PlayerInteraction : MonoBehaviour
         hasCan = false;
         can = null;
         CloseInventory();
+    }
+
+    public void AllowMovement(bool isAllowed)
+    {
+        basicMovement.movementEnabled = isAllowed;
     }
 }

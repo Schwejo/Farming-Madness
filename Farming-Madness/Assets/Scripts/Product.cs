@@ -11,4 +11,9 @@ public class Product
     {
         productSprite = sprite;
     }
+
+    public bool Equals(Product p)
+    {
+        return productSprite == p.productSprite;
+    }
 }

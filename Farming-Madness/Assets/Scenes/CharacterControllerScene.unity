@@ -4595,9 +4595,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d923e3a550d9b4981b286ef20a54c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipes: []
-  recipeSelection: {fileID: 1735082382}
-  productOverlay: {fileID: 852803425}
+  recipes:
+  - {fileID: 11400000, guid: 0acda6d05c6ae164c964721882b8c1dc, type: 2}
+  - {fileID: 11400000, guid: 83a974276bc1a8e42928d5b053504a33, type: 2}
+  - {fileID: 11400000, guid: cbaf5db03d03ba041b54ed3281f8431b, type: 2}
+  inputProducts: []
+  possibleRecipes: []
+  recipeSelectionUI: {fileID: 1735082382}
+  recipeSelectionProductUI: {fileID: 0}
+  recipeUI: {fileID: 0}
 --- !u!4 &1069747546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2744720243250222025, guid: c013c45fe147eeb4595e40dbbf35c4fb,

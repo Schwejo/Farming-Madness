@@ -102,6 +102,20 @@ public class Crop
     {
         field = null;
     }
+
+    public Product MakeProductFromCrop()
+    {
+        if (cropState == CropState.Stage5)
+        {
+            Product product = new Product(GetSprite());
+            return product;
+        }
+        else
+        {
+            Debug.LogError("Could not make product from crop, wrong stage!");
+            return null;
+        }
+    }
 }
 
  public enum CropState 

@@ -16,6 +16,8 @@ public class BasicMovement : MonoBehaviour
     private bool isMoving = false;
     private bool isHolding = false;
 
+    public bool movementEnabled = true;
+
 
     private void Start()
     {
@@ -25,9 +27,12 @@ public class BasicMovement : MonoBehaviour
 
     private void Update()
     {
-        ProcessInputs();
-        Animate();
-        Move();
+        if (movementEnabled)
+        {
+            ProcessInputs();
+            Animate();
+            Move();
+        }
     }
 
     private void ProcessInputs()
