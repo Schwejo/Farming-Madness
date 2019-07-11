@@ -103,6 +103,7 @@ public class Crop
         field = null;
     }
 
+    /* Makes a product out of this crop to interact with production buildings */
     public Product MakeProductFromCrop()
     {
         if (cropState == CropState.Stage5)

@@ -86,11 +86,15 @@ public class PlayerInteraction : MonoBehaviour
                             if (crop != null)
                             {
                                 product = crop.MakeProductFromCrop();
+                                if (product != null)
+                                {
+                                    building.Interact(product, this);
+                                }  
                             }
-                            if (product != null)
+                            else if (crop == null)
                             {
-                                building.Interact(product, this);
-                            }  
+                                building.Interact(null, this);
+                            }
                         }
                         break;  
                 }
@@ -152,6 +156,18 @@ public class PlayerInteraction : MonoBehaviour
     {
         hasCan = false;
         can = null;
+        CloseInventory();
+    }
+
+    public void SetProduct(Product p) 
+    {
+        product = p;
+        ShowInventory(product.productSprite);
+    }
+
+    public void UnsetProduct()
+    {
+        product = null;
         CloseInventory();
     }
 
