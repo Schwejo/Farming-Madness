@@ -171,6 +171,7 @@ public class Customer : MonoBehaviour
         }
 
         points += bonusPoints;
+        LevelManager.instance.AddPoints(points);
     }
 
     private void CalcMaxPoints()
@@ -190,6 +191,8 @@ public class Customer : MonoBehaviour
                     break;
             }
         }
+
+        LevelManager.instance.AddMaxPossiblePoints(maxPoints);
     }
 
     private void Move()
@@ -215,8 +218,6 @@ public class Customer : MonoBehaviour
     {
         customerManager.CustomerLeaves(targetIndex);
         customerUI.Reset(targetIndex);
-        LevelManager.instance.AddPoints(points);
-        LevelManager.instance.AddMaxPossiblePoints(maxPoints);
         Destroy(this.gameObject);
     }
 
