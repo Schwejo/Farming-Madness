@@ -94,6 +94,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treeAsset: {fileID: 11400000, guid: 6583e4e5031b4ef4a8844a0b3c10366e, type: 2}
+  appleProduct:
+    productSprite: {fileID: 21300000, guid: 9317dd5f9f5112d48b41ae8d5024b811, type: 3}
+    productType: 12
+    productTier: 1
 --- !u!61 &6960872986335772544
 BoxCollider2D:
   m_ObjectHideFlags: 0

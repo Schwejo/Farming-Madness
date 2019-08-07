@@ -11,6 +11,9 @@ TagManager:
   - Table
   - Tree
   - ProductionB
+  - SpawnedItems
+  - Well
+  - TargetPoint
   layers:
   - Default
   - TransparentFX
