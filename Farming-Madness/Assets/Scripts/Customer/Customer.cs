@@ -28,7 +28,7 @@ public class Customer : MonoBehaviour
     public int completeOrderT1Bonus = 50;
     public int completeOrderT2Bonus = 100;
     public int completeOrderT3Bonus = 150;
-    public int timeBonusMultiplier = 2;
+    public int timeBonus = 200;
     public float timeToBonusMultiplier = 0.75f;
 
     [Header("Time")]
@@ -69,6 +69,7 @@ public class Customer : MonoBehaviour
                 target = finalTarget;
                 CalcFinalPoints();
                 CalcMaxPoints();
+                WriteStats();
             }
         }
 
@@ -108,8 +109,12 @@ public class Customer : MonoBehaviour
                 target = finalTarget;
                 isMoving = true;
                 reachedTable = false;
-                CalcFinalPoints();
-                CalcMaxPoints();
+                if (LevelManager.instance != null)
+                {
+                    CalcFinalPoints();
+                    CalcMaxPoints();
+                    WriteStats();
+                }
             }
         }
 
@@ -140,15 +145,8 @@ public class Customer : MonoBehaviour
         if (soldItems == items.Length)
         {
             //get highest tier
-            int highestTier = 0;
-            for (int i = 0; i < items.Length; i++)
-            {
-                if (highestTier < items[i].productTier)
-                {
-                    highestTier = items[i].productTier;
-                }
-            }
-
+            int highestTier = GetHighestTier();
+            
             //add points based on tier
             switch (highestTier)
             {
@@ -166,7 +164,7 @@ public class Customer : MonoBehaviour
             //Extra bonus points, if fast delivered
             if (timeLeft >= timeToLeaveMax * timeToBonusMultiplier)
             {
-                bonusPoints *= timeBonusMultiplier;
+                bonusPoints += timeBonus;
             }
         }
 
@@ -174,8 +172,12 @@ public class Customer : MonoBehaviour
         LevelManager.instance.AddPoints(points);
     }
 
+    /*
+     * Max points include all bonus points (time bonus + complete order bonus)
+     */
     private void CalcMaxPoints()
     {
+        //base points
         for (int i = 0; i < items.Length; i++)
         {
             switch (items[i].productTier)
@@ -192,7 +194,53 @@ public class Customer : MonoBehaviour
             }
         }
 
+        //complete order bonus
+        int highestTier = GetHighestTier();
+        switch (highestTier)
+            {
+                case 1:
+                    maxPoints += completeOrderT1Bonus;
+                    break;
+                case 2:
+                    maxPoints += completeOrderT2Bonus;
+                    break;
+                case 3:
+                    maxPoints += completeOrderT3Bonus;
+                    break;
+            }
+
+        //time bonus
+        maxPoints += timeBonus;
+
         LevelManager.instance.AddMaxPossiblePoints(maxPoints);
+    }
+
+    private int GetHighestTier()
+    {
+        int tier = 0;
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (tier < items[i].productTier)
+            {
+                tier = items[i].productTier;
+            }
+        }
+        return tier;
+    }
+
+    private void WriteStats()
+    {
+        if (soldItems == 0)
+        {
+            AudioManager.instance.Play("customer_angry");
+            LevelManager.instance.AddFailedOrder();
+        }
+        else if (soldItems == items.Length)
+        {
+            AudioManager.instance.Play("customer_complete");
+            LevelManager.instance.AddCompletedOrder();
+            LevelManager.instance.AddSoldItems(soldItems);
+        }
     }
 
     private void Move()
@@ -204,7 +252,10 @@ public class Customer : MonoBehaviour
         {
             isMoving = false;
             if (target != finalTarget)
+            {
+                AudioManager.instance.Play("customer_new");
                 reachedTable = true;
+            } 
             else
                 FinalDestination();
         }
@@ -212,7 +263,6 @@ public class Customer : MonoBehaviour
 
     /* Calls customer manager to notify he is leaving and to reset target point.
      * Calls customer ui to reset it.
-     * Calls level manager to add points and to set max possible points.
      */
     private void FinalDestination()
     {

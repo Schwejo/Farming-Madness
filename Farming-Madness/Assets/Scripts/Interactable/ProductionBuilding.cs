@@ -19,6 +19,7 @@ public class ProductionBuilding : MonoBehaviour
 
     [Header("Cooking")]
     public bool cookingFinished = false;
+    public GameObject smoke;
 
     private PlayerInteraction player;
     private ProductionBuildingUI ui;
@@ -27,6 +28,8 @@ public class ProductionBuilding : MonoBehaviour
     private void Start()
     {
         ui = GetComponent<ProductionBuildingUI>();
+
+        smoke.SetActive(false);
         
         inputProducts = new List<Product>();
         possibleRecipes = new List<RecipeAsset>();
@@ -124,21 +127,21 @@ public class ProductionBuilding : MonoBehaviour
 
             ui.ShowRecipeSelection(possibleRecipes[selectedRecipe]);
         }
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(player.keyInteract))
         {
             activeRecipe = possibleRecipes[selectedRecipe];
             recipeSelectionActive = false;
 
             player.AllowMovement(true);
 
+            ui.ShowActiveRecipe(activeRecipe, inputProducts[0]);
+
             // if only one input is needed, start cooking immediatly
             if (activeRecipe.inputProducts.Length == 1)
             {
-                StartCoroutine("Cook");
+                StartCoroutine(WaitBeforeCooking());
                 return;
             }
-
-            ui.ShowActiveRecipe(activeRecipe, inputProducts[0]);
         }
     }
 
@@ -191,17 +194,29 @@ public class ProductionBuilding : MonoBehaviour
         //start cooking, if all ingredients are in
         if (inputProducts.Count == activeRecipe.inputProducts.Length) 
         {
-            StartCoroutine("Cook");
+            StartCoroutine(WaitBeforeCooking());
         }
 
         return productNeeded;
     }
 
+    /*
+     * Waits for 1 second before starting to cook, so you can see the filled out recipe.
+     */
+    private IEnumerator WaitBeforeCooking()
+    {
+        yield return new WaitForSeconds(1);
+        StartCoroutine(Cook());
+    }
+    
     private IEnumerator Cook() 
     {
         ui.StartCooking(activeRecipe);
+        smoke.SetActive(true);
         yield return new WaitForSeconds(activeRecipe.cookingTime);
         cookingFinished = true;
+        AudioManager.instance.Play("item_ready");
+        smoke.SetActive(false);
     }
 
     private void TakeUpProduct(PlayerInteraction p) 

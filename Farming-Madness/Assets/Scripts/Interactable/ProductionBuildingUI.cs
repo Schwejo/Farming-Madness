@@ -11,10 +11,11 @@ public class ProductionBuildingUI : MonoBehaviour
 
     [Header("Input")]
     public GameObject recipeInputUI;
-    public SpriteRenderer[] inputBG;
-    public SpriteRenderer[] inputOverlay;
-    public SpriteRenderer outputBG;
-    public SpriteRenderer outputOverlay;
+    public SpriteRenderer[] inputOverlays;
+    public SpriteRenderer oneItemBG;
+    public SpriteRenderer twoItemBG;
+    public SpriteRenderer threeItemBG;
+    private int recipeInputLength;
 
     [Header("Cooking")]
     public GameObject cookingCanvasObject;
@@ -28,6 +29,7 @@ public class ProductionBuildingUI : MonoBehaviour
     public GameObject textObject;
 
     private Color zeroOpacity;
+    private Color quarterOpacity;
     private Color halfOpacity;
     private Color fullOpacity;
 
@@ -39,13 +41,13 @@ public class ProductionBuildingUI : MonoBehaviour
         cookingCanvasObject.SetActive(false);
 
         zeroOpacity = new Color(255,255,255,0);
+        quarterOpacity = new Color(255,255,255,0.25f);
         halfOpacity = new Color(255,255,255,0.5f);
         fullOpacity = new Color(255,255,255,1);
 
-        for (int i = 0; i < inputBG.Length; i++)
-        {
-            inputBG[i].color = zeroOpacity;
-        }
+        oneItemBG.color = zeroOpacity;
+        twoItemBG.color = zeroOpacity;
+        threeItemBG.color = zeroOpacity;
     }
 
     private void Update() 
@@ -71,36 +73,54 @@ public class ProductionBuildingUI : MonoBehaviour
         recipeSelectionUI.SetActive(false);
         recipeInputUI.SetActive(true);
 
-        bool occurredOnce = false;
+        recipeInputLength = recipe.inputProducts.Length;
+
+        //Select correct background
+        switch (recipeInputLength)
+        {
+            case 1:
+                oneItemBG.color = fullOpacity;
+                break;
+            case 2:
+                twoItemBG.color = fullOpacity;
+                break;
+            case 3:
+                threeItemBG.color = fullOpacity;
+                break;
+        }
 
         //Shows input products
-        for (int i = 0; i < recipe.inputProducts.Length; i++) 
+        bool occurredOnce = false;
+        int indexOutput = 0;
+        for (int i = 0; i < recipeInputLength; i++) 
         {
-            inputBG[i].color = fullOpacity;
-            inputOverlay[i].sprite = recipe.inputProducts[i].productSprite;
+            inputOverlays[i].sprite = recipe.inputProducts[i].productSprite;
+            indexOutput = i+1;
 
+            //Full opacity only, if item was already put in (=fist product)
             if (recipe.inputProducts[i].Equals(firstProduct) && !occurredOnce)
             {
-                inputOverlay[i].color = fullOpacity;
+                inputOverlays[i].color = fullOpacity;
                 occurredOnce = true;
             } 
             else 
             {
-                inputOverlay[i].color = halfOpacity;
+                inputOverlays[i].color = quarterOpacity;
             }
         }
 
-        //Shows output product
-        outputOverlay.sprite = recipe.outputProduct.productSprite;
+        //Show output product
+        inputOverlays[indexOutput].sprite = recipe.outputProduct.productSprite;
+        inputOverlays[indexOutput].color = quarterOpacity;
     }
 
     public void InputProduct(Product input)
     {
-        for (int i = 0; i < inputOverlay.Length; i++)
+        for (int i = 0; i < recipeInputLength; i++)
         {
-            if (inputOverlay[i].sprite == input.productSprite && inputOverlay[i].color != fullOpacity)
+            if (inputOverlays[i].sprite == input.productSprite && inputOverlays[i].color != fullOpacity)
             {
-                inputOverlay[i].color = fullOpacity;
+                inputOverlays[i].color = fullOpacity;
                 break;
             }
         }
@@ -112,7 +132,7 @@ public class ProductionBuildingUI : MonoBehaviour
         recipeSelectionUI.SetActive(false);
         recipeInputUI.SetActive(false);
         cookingOverlay.sprite = recipe.outputProduct.productSprite;
-        cookingOverlay.color = halfOpacity;
+        cookingOverlay.color = quarterOpacity;
         cookingTime = recipe.cookingTime;
         timer = 0;
         cooking = true;

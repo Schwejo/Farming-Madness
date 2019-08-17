@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    public string player;
+    
     [Header("Keys")]
-    public KeyCode interactKey;
+    public KeyCode keyInteract;
+    public KeyCode keyUp;
+    public KeyCode keyDown;
     public KeyCode keyLeft;
     public KeyCode keyRight;
     
@@ -27,11 +31,13 @@ public class PlayerInteraction : MonoBehaviour
     private void Start()
     {
         basicMovement = GetComponent<BasicMovement>();
+        GetKeys();
+        basicMovement.SetupKeys(keyUp, keyDown, keyLeft, keyRight);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(interactKey))
+        if (Input.GetKeyUp(keyInteract))
         {          
             if (target != null)
             {
@@ -168,20 +174,29 @@ public class PlayerInteraction : MonoBehaviour
     public void SetCrop(Crop c)
     {
         crop = c;
+        AudioManager.instance.Play("pick");
         ShowInventory(crop.GetSprite());
     }
 
-    public void UnsetCrop()
+    public void UnsetCrop(bool audio = true)
     {
         crop = null;
         product = null;
+        if (audio)
+            AudioManager.instance.Play("put");
         CloseInventory();
+    }
+
+    public Crop GetCrop()
+    {
+        return crop;
     }
 
     public void TakeCan(GameObject c)
     {
         hasCan = true;
         can = c;
+        AudioManager.instance.Play("pick");
         ShowInventory(can.GetComponent<Can>().GetSprite());
     }
 
@@ -189,24 +204,54 @@ public class PlayerInteraction : MonoBehaviour
     {
         hasCan = false;
         can = null;
+        AudioManager.instance.Play("put");
         CloseInventory();
     }
 
     public void SetProduct(Product p) 
     {
         product = p;
+        AudioManager.instance.Play("pick");
         ShowInventory(product.productSprite);
     }
 
-    public void UnsetProduct()
+    public void UnsetProduct(bool audio = true)
     {
         product = null;
         crop = null;
+        if (audio)
+            AudioManager.instance.Play("put");
         CloseInventory();
+    }
+
+    public Product GetProduct()
+    {
+        return product;
     }
 
     public void AllowMovement(bool isAllowed)
     {
         basicMovement.movementEnabled = isAllowed;
+    }
+
+    private void GetKeys()
+    {
+        switch (player)
+        {
+            case "p1":
+                keyUp = GameManager.instance.p1Up;
+                keyDown = GameManager.instance.p1Down;
+                keyLeft = GameManager.instance.p1Left;
+                keyRight = GameManager.instance.p1Right;
+                keyInteract = GameManager.instance.p1Interact;
+                break;
+            case "p2":
+                keyUp = GameManager.instance.p2Up;
+                keyDown = GameManager.instance.p2Down;
+                keyLeft = GameManager.instance.p2Left;
+                keyRight = GameManager.instance.p2Right;
+                keyInteract = GameManager.instance.p2Interact;
+                break;
+        }
     }
 }

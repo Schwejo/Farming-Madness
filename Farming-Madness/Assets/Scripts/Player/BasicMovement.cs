@@ -5,25 +5,43 @@ using UnityEngine;
 public class BasicMovement : MonoBehaviour
 {
     public Animator animator;
+    private Rigidbody2D rb;
+
+    public BoxCollider2D upCol;
+    public BoxCollider2D leftCol;
+    public BoxCollider2D downCol;
+    public BoxCollider2D rightCol;
+
     public float speedMultiplier = 5.0f;
+    public bool movementEnabled = true;
 
-    private Vector3 movement;
-    private Vector3 lastMovement;
-
-    public string horizontalAxis;
-    public string verticalAxis;
+    private KeyCode up;
+    private KeyCode down;
+    private KeyCode left;
+    private KeyCode right;
+    
+    private Vector2 movement;
+    private Vector2 lastMovement;
     
     private bool isMoving = false;
     private bool isHolding = false;
 
-    public bool movementEnabled = true;
-
 
     private void Start()
     {
-        movement = new Vector3(0,0,0);
+        rb = GetComponent<Rigidbody2D>();
+        movement = new Vector2(0,0);
     }
 
+    private void OnEnable()
+    {
+        LevelManager.OnTimeIsUp += EndGame;
+    }
+
+    private void OnDisable()
+    {
+        LevelManager.OnTimeIsUp -= EndGame;
+    }
 
     private void Update()
     {
@@ -35,11 +53,45 @@ public class BasicMovement : MonoBehaviour
         }
     }
 
+    public void SetupKeys(KeyCode kUp, KeyCode kDown, KeyCode kLeft, KeyCode kRight)
+    {
+        up = kUp;
+        down = kDown;
+        left = kLeft;
+        right = kRight;
+    }
+
     private void ProcessInputs()
     {
+        if (Input.GetKey(up))
+        {
+            movement.y = 1;
+        }
+        else if (Input.GetKey(down))
+        {
+            movement.y = -1;
+        }
+        else 
+        {
+            movement.y = 0;
+        }
+
+        if (Input.GetKey(left))
+        {
+            movement.x = -1;
+        }
+        else if (Input.GetKey(right))
+        {
+            movement.x = 1;
+        }
+        else
+        {
+            movement.x = 0;
+        }
         
-        movement.x = Input.GetAxis(horizontalAxis);
-        movement.y = Input.GetAxis(verticalAxis);
+        
+        //movement.x = Input.GetAxis(horizontalAxis);
+        //movement.y = Input.GetAxis(verticalAxis);
 
         //Store last movement vector while walking and set isMoving var.
         if(movement.magnitude != 0)
@@ -51,6 +103,8 @@ public class BasicMovement : MonoBehaviour
         {
             isMoving = false;
         }
+
+        movement.Normalize();
     }
 
     private void Animate()
@@ -67,14 +121,54 @@ public class BasicMovement : MonoBehaviour
         animator.SetBool("IsHolding", isHolding);
     }
 
+    /*
+     * Moves the rigidbody with its velocity param.
+     * Sets correct collider based on movement direction.
+     */
     private void Move() 
     {
         movement = movement * speedMultiplier;
-        transform.position = transform.position + movement * Time.deltaTime;
+        rb.velocity = movement;
+        //transform.position = transform.position + movement * Time.deltaTime;
+
+        if (movement.y > 0.1f)
+		{
+			upCol.enabled = true;
+			downCol.enabled = false;
+			rightCol.enabled = false;
+			leftCol.enabled = false;
+		}
+		else if (movement.y < -0.1f)
+		{
+			upCol.enabled = false;
+			downCol.enabled = true;
+			rightCol.enabled = false;
+			leftCol.enabled = false;
+		}
+
+		if (movement.x > 0.1f)
+		{
+			upCol.enabled = false;
+			downCol.enabled = false;
+			rightCol.enabled = true;
+			leftCol.enabled = false;
+		} 
+        else if (movement.x < -0.1f)
+		{
+			upCol.enabled = false;
+			downCol.enabled = false;
+			rightCol.enabled = false;
+			leftCol.enabled = true;
+		}
     }
 
     public void SetIsHolding(bool value)
     {
         isHolding = value;
+    }
+
+    private void EndGame(int stars)
+    {
+        movementEnabled = false;
     }
 }

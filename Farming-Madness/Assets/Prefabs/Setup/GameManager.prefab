@@ -43,3 +43,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67dfe3a5cd72bd3428f9cc3a59f0935b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultValuesAsset: {fileID: 11400000, guid: a0bbec0449ebce64190ea92a68501886, type: 2}
+  savedData:
+    firstStart: 1
+    playTutorial: 1
+    level01:
+      number: 0
+      maxStars: 0
+      maxPoints: 0
+      maxSoldItems: 0
+      maxCompletedOrders: 0
+      minFailedOrders: 0
+    level02:
+      number: 0
+      maxStars: 0
+      maxPoints: 0
+      maxSoldItems: 0
+      maxCompletedOrders: 0
+      minFailedOrders: 0
+    level03:
+      number: 0
+      maxStars: 0
+      maxPoints: 0
+      maxSoldItems: 0
+      maxCompletedOrders: 0
+      minFailedOrders: 0
+    p1Up: 119
+    p1Down: 115
+    p1Left: 97
+    p1Right: 100
+    p1Interact: 101
+    p2Up: 105
+    p2Down: 107
+    p2Left: 106
+    p2Right: 108
+    p2Interact: 111
+    pauseKey: 27
+  dataPath: 
+  player1: {fileID: 0}
+  p1Up: 119
+  p1Down: 115
+  p1Left: 97
+  p1Right: 100
+  p1Interact: 101
+  player2: {fileID: 0}
+  p2Up: 105
+  p2Down: 107
+  p2Left: 106
+  p2Right: 108
+  p2Interact: 111
+  pauseKey: 27

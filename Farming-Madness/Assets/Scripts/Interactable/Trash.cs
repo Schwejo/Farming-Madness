@@ -8,11 +8,13 @@ public class Trash : MonoBehaviour
     {
         if (c != null && !hasCan)
         {
-            player.UnsetCrop();
+            player.UnsetCrop(false);
+            AudioManager.instance.Play("trash");
         }
         if (p != null && !hasCan)
         {
-            player.UnsetProduct();
+            player.UnsetProduct(false);
+            AudioManager.instance.Play("trash");
         }
     }
 }

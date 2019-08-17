@@ -6,6 +6,7 @@ using UnityEngine;
 public class Loader : MonoBehaviour
 {
     public GameManager gameManager;
+    public AudioManager audioManager;
 
     private void Awake()
     {
@@ -13,6 +14,12 @@ public class Loader : MonoBehaviour
         if (GameManager.instance == null)
         {
             Instantiate(gameManager);
+        }
+
+        //Spawn audioManager
+        if (AudioManager.instance == null)
+        {
+            Instantiate(audioManager);
         }
     }
 }

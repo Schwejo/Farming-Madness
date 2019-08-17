@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class MoveTo : MonoBehaviour
 {
     public Transform target;
     public float speed = 5.0f;
     public bool destroyAtTarget = false;
+    public bool callEventAtTarget = false;
+
+    public static Action OnTargetReached;
     
     private bool isMoving = true;
     private Vector3 targetPoint;
@@ -44,6 +48,10 @@ public class MoveTo : MonoBehaviour
             if (destroyAtTarget)
             {
                 Destroy(gameObject);
+            }
+            if (callEventAtTarget && OnTargetReached != null)
+            {
+                OnTargetReached();
             }
         }
     }

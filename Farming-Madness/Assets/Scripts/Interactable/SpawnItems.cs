@@ -9,9 +9,19 @@ public class SpawnItems : MonoBehaviour
     public Product product;
     private int spawnedItems = 0;
 
-    private void Start()
+    private void OnEnable()
     {
-        StartCoroutine("Spawn");
+        LevelManager.OnGameStart += StartGame;
+    }
+
+    private void OnDisable()
+    {
+        LevelManager.OnGameStart -= StartGame;
+    }
+
+    private void StartGame()
+    {
+        StartCoroutine(Spawn());
     }
 
     private IEnumerator Spawn()

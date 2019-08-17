@@ -25,6 +25,7 @@ public class CustomerManager : MonoBehaviour
 
     [Header("UI")]
     public CustomerUI customerUI;
+    
 
     private RandomProducts randomProducts;
 
@@ -35,8 +36,33 @@ public class CustomerManager : MonoBehaviour
         {
             Debug.LogError("Could not find random product script.");
         }
-        
-        StartCoroutine("SpawnCustomer");
+    }
+
+    private void OnEnable()
+    {
+        TutorialManager.CustomerStart += StartGame;
+        TutorialManager.CustomerEnd += EndGame;
+        LevelManager.OnGameStart += StartGame;
+        LevelManager.OnTimeIsUp += EndGame;
+    }
+
+    private void OnDisable()
+    {
+        TutorialManager.CustomerStart -= StartGame;
+        TutorialManager.CustomerEnd -= EndGame;
+        LevelManager.OnGameStart -= StartGame;
+        LevelManager.OnTimeIsUp -= EndGame;
+    }
+
+    private void StartGame()
+    {
+        StartCoroutine(SpawnCustomer());
+    }
+
+    private void EndGame(int stars)
+    {
+        countCustomers = 100;
+        StopAllCoroutines();
     }
 
     /* Spawns a new random customer every "timeForNextCustomer" seconds

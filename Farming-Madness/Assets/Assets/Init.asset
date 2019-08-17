@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e99955e04302404cadd0b7fcc3a5304, type: 3}
+  m_Name: Init
+  m_EditorClassIdentifier: 
+  jsonString: '{"firstStart":true,"playTutorial":true,"level01":{"number":0,"maxStars":0,"maxPoints":0,"maxSoldItems":0,"maxCompletedOrders":0,"minFailedOrders":0},"level02":{"number":0,"maxStars":0,"maxPoints":0,"maxSoldItems":0,"maxCompletedOrders":0,"minFailedOrders":0},"level03":{"number":0,"maxStars":0,"maxPoints":0,"maxSoldItems":0,"maxCompletedOrders":0,"minFailedOrders":0},"p1Up":119,"p1Down":115,"p1Left":97,"p1Right":100,"p1Interact":101,"p2Up":105,"p2Down":107,"p2Left":106,"p2Right":108,"p2Interact":111,"pauseKey":27}'

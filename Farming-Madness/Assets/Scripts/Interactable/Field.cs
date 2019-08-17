@@ -32,7 +32,7 @@ public class Field : MonoBehaviour
         {
             crop = c;
             PlantSeed();
-            player.UnsetCrop();
+            player.UnsetCrop(false);
         }
         else if (c == null && !hasCan && crop.hasCropAsset() && crop.cropState == CropState.Stage4)
         {
@@ -44,6 +44,7 @@ public class Field : MonoBehaviour
     {
         mainSpriteRenderer.sprite = fieldWetSprite;
         isWet = true;
+        AudioManager.instance.Play("water");
     }
 
     private void Dry()
@@ -58,6 +59,7 @@ public class Field : MonoBehaviour
         crop.SetField(this);
         cropOverlay.sprite = crop.GetSprite();
         hasCrop = true;
+        AudioManager.instance.Play("plant");
     }
 
     private void Harvest(PlayerInteraction p)
@@ -82,5 +84,10 @@ public class Field : MonoBehaviour
         {
             crop.Grow(Time.deltaTime);
         }
+    }
+
+    public bool GetIsWet()
+    {
+        return isWet;
     }
 }

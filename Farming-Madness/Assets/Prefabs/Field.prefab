@@ -176,6 +176,7 @@ MonoBehaviour:
   crop:
     cropAsset: {fileID: 0}
     cropState: 0
+    field: {fileID: 0}
   fieldDrySprite: {fileID: 21300000, guid: b4b2b1d8973921c42ae7bcd737b5cc04, type: 3}
   fieldWetSprite: {fileID: 21300000, guid: b19cc57262369e14d89657c96bac0d76, type: 3}
   cropOverlay: {fileID: 5790027406121212419}
@@ -189,7 +190,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
