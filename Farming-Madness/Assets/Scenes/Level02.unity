@@ -11000,20 +11000,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2106694397}
-    - target: {fileID: 2025225644, guid: b2e78c71378a0f846b7a2ee2a5e371c6, type: 3}
-      propertyPath: m_Name
-      value: Counter4Items
-      objectReference: {fileID: 0}
-    - target: {fileID: 7356808915552070107, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
-        type: 3}
-      propertyPath: targetPoints.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7356808915552070107, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
-        type: 3}
-      propertyPath: targetPoints.Array.data[3]
-      value: 
-      objectReference: {fileID: 2061281070}
     - target: {fileID: 7356808915552070105, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
         type: 3}
       propertyPath: possibleT1Products.Array.size
@@ -11219,6 +11205,20 @@ PrefabInstance:
       propertyPath: tierProbability.Array.data[9]
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2025225644, guid: b2e78c71378a0f846b7a2ee2a5e371c6, type: 3}
+      propertyPath: m_Name
+      value: Counter4Items
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356808915552070107, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
+        type: 3}
+      propertyPath: targetPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356808915552070107, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
+        type: 3}
+      propertyPath: targetPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 2061281070}
     - target: {fileID: 2025225646, guid: b2e78c71378a0f846b7a2ee2a5e371c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
@@ -65991,7 +65991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 8600172841537069479}
-  nextLevel: Level02
+  nextLevel: Level03
   scoreValue: {fileID: 8600172842610856835}
   maxPointsValue: {fileID: 8600172840833610959}
   soldItemsValue: {fileID: 1211436610}
@@ -66182,7 +66182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &8600172841680343324
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@
 [Aa]ssets/AssetStoreTools*
 [Uu]nityGenerated/
 [Ll]ocal[Cc]ache/
+# Theme sounds - files too large
+[Aa]ssets/Sounds/largetheme*.wav
 
 # Visual Studio cache directory + VS Code
 .vs/

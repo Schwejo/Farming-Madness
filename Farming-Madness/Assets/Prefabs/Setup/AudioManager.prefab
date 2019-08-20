@@ -152,19 +152,19 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: c79b711fc2329674c8b6ec4fb904e729, type: 3}
+  - clip: {fileID: 8300000, guid: 6c28f7a652963ed47924acba820cf0cd, type: 3}
     name: theme5min
     volume: 0.4
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 926e4f8a38938da4c983803bbd8ce6b2, type: 3}
+  - clip: {fileID: 8300000, guid: 88caf37628d41214e96ef2c518991864, type: 3}
     name: theme7min
     volume: 0.4
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 6c0506c56f83efa458a105266d8198dd, type: 3}
+  - clip: {fileID: 8300000, guid: 825ed453bba542844a7a45dfc84eb0af, type: 3}
     name: theme10min
     volume: 0.4
     pitch: 1
