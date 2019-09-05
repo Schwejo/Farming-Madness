@@ -10789,30 +10789,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2106694397}
-    - target: {fileID: 2025225644, guid: b2e78c71378a0f846b7a2ee2a5e371c6, type: 3}
-      propertyPath: m_Name
-      value: Counter5Items
-      objectReference: {fileID: 0}
-    - target: {fileID: 7356808915552070107, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
-        type: 3}
-      propertyPath: targetPoints.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7356808915552070107, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
-        type: 3}
-      propertyPath: targetPoints.Array.data[3]
-      value: 
-      objectReference: {fileID: 746536002}
-    - target: {fileID: 7356808915552070107, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
-        type: 3}
-      propertyPath: targetPoints.Array.data[4]
-      value: 
-      objectReference: {fileID: 492354165}
-    - target: {fileID: 7356808915552070107, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
-        type: 3}
-      propertyPath: maxCustomers
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7356808915552070105, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
         type: 3}
       propertyPath: possibleT1Products.Array.size
@@ -10991,7 +10967,7 @@ PrefabInstance:
     - target: {fileID: 7356808915552070105, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
         type: 3}
       propertyPath: tierProbability.Array.data[3]
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7356808915552070105, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
         type: 3}
@@ -11133,17 +11109,41 @@ PrefabInstance:
     - target: {fileID: 7356808915552070105, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
         type: 3}
       propertyPath: tierProbability.Array.data[6]
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7356808915552070105, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
         type: 3}
       propertyPath: tierProbability.Array.data[2]
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7356808915552070105, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
         type: 3}
       propertyPath: itemCountProbability.Array.data[5]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025225644, guid: b2e78c71378a0f846b7a2ee2a5e371c6, type: 3}
+      propertyPath: m_Name
+      value: Counter5Items
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356808915552070107, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
+        type: 3}
+      propertyPath: targetPoints.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356808915552070107, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
+        type: 3}
+      propertyPath: targetPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 746536002}
+    - target: {fileID: 7356808915552070107, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
+        type: 3}
+      propertyPath: targetPoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 492354165}
+    - target: {fileID: 7356808915552070107, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
+        type: 3}
+      propertyPath: maxCustomers
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2025225646, guid: b2e78c71378a0f846b7a2ee2a5e371c6, type: 3}
       propertyPath: m_LocalPosition.x

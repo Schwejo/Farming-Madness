@@ -11323,7 +11323,12 @@ PrefabInstance:
     - target: {fileID: 7356808915552070105, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
         type: 3}
       propertyPath: tierProbability.Array.data[7]
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356808915552070105, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
+        type: 3}
+      propertyPath: itemCountProbability.Array.data[8]
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2e78c71378a0f846b7a2ee2a5e371c6, type: 3}

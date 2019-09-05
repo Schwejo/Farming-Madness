@@ -11205,6 +11205,16 @@ PrefabInstance:
       propertyPath: tierProbability.Array.data[9]
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7356808915552070105, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
+        type: 3}
+      propertyPath: itemCountProbability.Array.data[5]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356808915552070105, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
+        type: 3}
+      propertyPath: itemCountProbability.Array.data[8]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2025225644, guid: b2e78c71378a0f846b7a2ee2a5e371c6, type: 3}
       propertyPath: m_Name
       value: Counter4Items
@@ -11219,6 +11229,11 @@ PrefabInstance:
       propertyPath: targetPoints.Array.data[3]
       value: 
       objectReference: {fileID: 2061281070}
+    - target: {fileID: 7356808915552070107, guid: b2e78c71378a0f846b7a2ee2a5e371c6,
+        type: 3}
+      propertyPath: maxCustomers
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2025225646, guid: b2e78c71378a0f846b7a2ee2a5e371c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02
